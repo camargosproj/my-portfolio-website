@@ -1,0 +1,39 @@
+:root{
+    --side-bar-color: #002366;
+    --side-content-color: #0F52BA;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+section{
+    height: 100vh;
+    width: 100vw;
+    background-color: #000;
+}
+
+/* -- Hero section styles -- */
+.hero-section{
+    display: flex;
+}
+.side-bar{
+    width: 20%;
+    height: 100vh;
+    background-color: var(--side-bar-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.side-content{
+    width: 80%;
+    height: 100vh;
+    background-color: var(--side-content-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
