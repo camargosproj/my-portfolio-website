@@ -9,21 +9,20 @@
     <title>Marcos Camargo - Software Developer </title>
 </head>
 <body>
-    <section class="home-section">
+    <section class="home-section" id="home">
         <div class="hero-section">
             <div class="sidebar">
                 <div class="profile-container">
                     <img src="assets/images/profile.jpg" alt="Foto de perfil no topo da barra de navegação vertical">
                     <h4>Marcos Camargo</h4>
-                    <p>Software Developer</p>
-                    
+                    <p>Software Developer</p>                    
                 </div>
                 <nav class="navigation">
                     <ul>
-                        <li><a href="#"><i class="fa-solid fa-house-user"></i>Home</a></li>
-                        <li><a href="#"><i class="fa-solid fa-code"></i>Skills</a></li>
-                        <li><a href="#"><i class="fa-solid fa-folder"></i>Portfolio</a></li>
-                        <li><a href="#"><i class="fa-solid fa-paper-plane"></i>Contato</a></li>
+                        <li><a href="#home"><i class="fa-solid fa-house-user"></i>Home</a></li>
+                        <li><a href="#skills"><i class="fa-solid fa-code"></i>Skills</a></li>
+                        <li><a href="#portfolio"><i class="fa-solid fa-folder"></i>Portfolio</a></li>
+                        <li><a href="#contato"><i class="fa-solid fa-paper-plane"></i>Contato</a></li>
                     </ul>
                 </nav>
                 <div class="social-media">
@@ -33,12 +32,25 @@
                 </div>
             </div>
             
-            <div class="side-content"></div>
+            <div class="side-content" id="dark-mode-toggle">
+                <button class="toggle-dark-button" onclick="toggleDarkMode()"><i id="toggle-icon" class="fa-solid fa-moon"></i></button>
+                <div class="hero-text">
+                    <h1>Olá, Visitante!</h1>
+                    <p>Me chamo Marcos Camargo sou estudante de Analise e Desenvolvimento de sistema, amante da tecnologia e do mundo de desenvolvivendo e gostaria de mostrar um pouco do meu trabalho. Vamos lá?</p>
+                    <div class="scroll-next-section">
+                        <a href="#skills"><i class="fa-solid fa-arrow-down"></i></a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="assets/images/hero-image.jpg" alt="Imagem de fundo da página inicial">
+                </div>
+                
+            </div>
         </div>
     </section>
-    <section class="skills-section"></section>
-    <section class="portfolio-section"></section>
-    <section class="contact-section"></section>
+    <section class="skills-section" id="skills"></section>
+    <section class="portfolio-section" id="portfolio"></section>
+    <section class="contato-section" id="contato"></section>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
