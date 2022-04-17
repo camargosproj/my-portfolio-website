@@ -10,16 +10,10 @@
     --nav-font-size: 1.5rem;
     --nav-social-size: 2.5rem;   
     --h1-font-size: 2.5rem; 
+    --paragraph-font-size: 1.5rem;
 }
 
-@media screen and (max-width: 1430px) {
-    :root{
-        --profile-font-size: 1rem;
-        --profile-p-size: .8rem;
-        --nav-font-size: 1rem;
-        --nav-social-size: 2rem;
-    }
-}
+
 
 *{
     padding: 0;
@@ -62,8 +56,23 @@ section{
     justify-content: space-around;
     align-items: center;
     position: fixed;
-
 }
+
+/* -- Hamburguer Menu button -- */
+.hamburger-btn{
+    position: absolute;
+    top: 5%;
+    left: 2%;    
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    z-index: 2;
+}
+.fa-bars{    
+    color: #000;
+    font-size: 2rem;
+}
+/* -- Profile Container -- */
 
 .profile-container{
     display: flex;
@@ -71,9 +80,8 @@ section{
     width: 100%;
     align-items: center;
     padding: 1rem;
-    border-radius: 50%;
     color: var(--side-content-color);
-
+    min-width: 150px;
 }
 .profile-container h4{
     margin: 1rem 0 .5rem;
@@ -87,6 +95,8 @@ section{
     border-radius: 50%;
     margin: 0 auto;
 }
+
+/* -- Navbar links -- */
 .navigation{
     height: 40vh;
     width: 100%;
@@ -135,6 +145,26 @@ section{
     padding-bottom: 2rem;
     transition: all ease-in-out .2s;
 }
+
+@media screen and (max-width: 1430px) {
+    :root{
+        --profile-font-size: .8rem;
+        --profile-p-size: .6rem;
+        --nav-font-size: .8rem;
+        --nav-social-size: 1.5rem;   
+        --h1-font-size: 2rem; 
+        --paragraph-font-size: 1.2rem;
+    }
+    .navigation i{
+        margin-right: .2rem;
+    }
+    
+}
+
+
+
+/* -- Hero section content -- */
+
 .side-content{
     position: relative;
     left: 15%;
@@ -157,6 +187,7 @@ section{
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    z-index: 1;
 }
 .dark-mode{
     background-color: var(--dark-mode-color);
@@ -166,13 +197,39 @@ section{
 .hero-image{
     height: 100vh;
     width: 50%;
+    position: relative;
 }
 
 .hero-image img{
     height: 100%;
     width: 100%;
 }
-.hero-text{
+
+.slide-container{  
+    display: flex;  
+    justify-content: space-around;
+    align-items: center;
+    width: 4rem;
+    height: 2rem;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+}
+
+.slide-btn{
+    background-color: #fff;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.slide-active{
+    background: transparent;
+    border: #090a0a 2px solid;
+    pointer-events: none;
+}
+.hero-text-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -180,13 +237,29 @@ section{
     width: 50%;
     height: 100%;
     padding: 2rem;
+    animation: text-animation .5s forwards;
 }
-.hero-text h1{
+.hero-text-container h1{
     font-size: var(--h1-font-size);
     margin: 1rem;
+    animation-delay: .175s;
+
 }
-.hero-text p{
-    font-size: 1.5rem;
+.hero-text-container p{
+    font-size: var(--paragraph-font-size);
+    animation-delay: .25s ;
+}
+
+
+/* Animation for text in the hero section*/
+@keyframes text-animation{
+    from{
+        transform: translateY(20px);
+    }
+    to{
+        opacity: 1;
+        transform: none;
+    }
 }
 
 .scroll-next-section{
@@ -220,4 +293,43 @@ section{
     color: #090a0a;
     font-size: 1.5rem;
     margin: 0 auto;
+}
+
+@media screen and (max-width: 700px) {
+    
+    :root{
+        --profile-font-size: .7rem;
+        --profile-p-size: .5rem;
+        --nav-font-size: 1rem;
+        --nav-social-size: 2rem;
+        --nav-font-size: .8rem;
+        --nav-social-size: 2.5rem;   
+        --h1-font-size: 1.5rem; 
+        --paragraph-font-size: 1rem;
+    }
+    .sidebar{
+        display: none;
+    }
+    
+    .social-media{
+        flex-direction: column;
+        font-size: .8rem;
+        margin-bottom: 1rem;
+    }
+    .social-media i{
+        font-size: 1rem;
+        padding: .4rem;
+        color: var(--side-content-color);
+    }
+    .navigation li{
+        margin: 0;
+    }
+    .navigation i{
+        display: none;
+    }
+    .side-content{
+        width: 100%;
+        left: 0;
+    }
+    
 }

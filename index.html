@@ -11,7 +11,7 @@
 <body>
     <section class="home-section" id="home">
         <div class="hero-section">
-            <div class="sidebar">
+            <div class="sidebar active-sidebar">
                 <div class="profile-container">
                     <img src="assets/images/profile.jpg" alt="Foto de perfil no topo da barra de navegação vertical">
                     <h4>Marcos Camargo</h4>
@@ -33,16 +33,22 @@
             </div>
             
             <div class="side-content" id="dark-mode-toggle">
+                <button onclick="toggleSideBar()" class="hamburger-btn"><i class="fa-solid fa-bars"></i></button>
                 <button class="toggle-dark-button" onclick="toggleDarkMode()"><i id="toggle-icon" class="fa-solid fa-moon"></i></button>
-                <div class="hero-text">
-                    <h1>Olá, Visitante!</h1>
-                    <p>Me chamo Marcos Camargo sou estudante de Analise e Desenvolvimento de sistema, amante da tecnologia e do mundo de desenvolvivendo e gostaria de mostrar um pouco do meu trabalho. Vamos lá?</p>
+                <div class="hero-text-container">
+                    <h1 class="hero-text-title">Olá, Visitante!</h1>
+                    <p class="hero-text">Me chamo Marcos Camargo sou estudante de Analise e Desenvolvimento de sistema, amante da tecnologia e do mundo de desenvolvivendo e gostaria de mostrar um pouco do meu trabalho. Vamos lá?</p>
                     <div class="scroll-next-section">
                         <a href="#skills"><i class="fa-solid fa-arrow-down"></i></a>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="assets/images/hero-image.jpg" alt="Imagem de fundo da página inicial">
+                    <img class="img-slide" src="assets/images/hero-image.jpg" alt="Imagem de fundo da página inicial">
+                    <div class="slide-container">
+                        <a class="slide-btn slide-active" onclick="changeSlide(0)"></a>
+                        <a class="slide-btn" onclick="changeSlide(1)"></a>
+                        <a class="slide-btn" onclick="changeSlide(2)"></a>
+                    </div>
                 </div>
                 
             </div>
