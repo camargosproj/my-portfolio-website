@@ -2,12 +2,12 @@
 :root{
     --sidebar-color: #082032;
     --sidebar-media-color: #061d2e;
-    --side-content-color: #F7F5F2;
+    --side-content-color: #f7f2f6;
     --sidebar-font-color: #fff;
     --dark-mode-color: #282828;
-    --profile-font-size: 1.5rem;
-    --profile-p-size: 1rem;
-    --nav-font-size: 1.5rem;
+    --profile-font-size: 1.1rem;
+    --profile-p-size: .8rem;
+    --nav-font-size: 1.3rem;
     --nav-social-size: 2.5rem;   
     --h1-font-size: 2.5rem; 
     --paragraph-font-size: 1.5rem;
@@ -22,9 +22,9 @@
     text-decoration: none;
     list-style: none;
     scroll-behavior: smooth;
-    font-family: 'Montserrat', sans-serif;
 }
 
+/* -- Section default styles -- */
 
 section{
     height: 100vh;
@@ -47,31 +47,46 @@ section{
 .hero-section{
     display: flex;
 }
-.sidebar{
+
+
+/* #region SIDEBAR*/
+.sidebar-container{
+    min-width: 12.5rem;
     width: 15%;
     height: 100vh;
+}
+.sidebar{
+    width: 15%;
+    min-width: 12.5rem;
+    height: 100vh;
+    min-height: 600px;
     background-color: var(--sidebar-color);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     position: fixed;
+    z-index: 1;
+    animation: sidebar-slide-in .8s ease-in-out;
+}
+
+@keyframes sidebar-slide-in{
+    0%{
+        transform: translateX(-100%);
+    }
+    
+    100%{
+        transform: translateX(0);
+    }
 }
 
 /* -- Hamburguer Menu button -- */
 .hamburger-btn{
-    position: absolute;
-    top: 5%;
-    left: 2%;    
-    cursor: pointer;
-    background: transparent;
-    border: none;
-    z-index: 2;
+    display: none;    
 }
-.fa-bars{    
-    color: #000;
-    font-size: 2rem;
-}
+
+
+
 /* -- Profile Container -- */
 
 .profile-container{
@@ -84,6 +99,7 @@ section{
     min-width: 150px;
 }
 .profile-container h4{
+    font-weight: bold;
     margin: 1rem 0 .5rem;
     font-size: var(--profile-font-size);    
 }
@@ -107,14 +123,14 @@ section{
 }
 
 .navigation li{
-    margin: 2rem;
+    padding: 2rem;
     padding-bottom: .6rem;
-    border-bottom: #fff 1px solid;    
 }
 
 .navigation a{
     color: #fff;
     font-size: var(--nav-font-size);
+    border-bottom: #fff 1px solid;    
 }
 .navigation li:hover{
     transform: translateX(10px);
@@ -145,31 +161,15 @@ section{
     padding-bottom: 2rem;
     transition: all ease-in-out .2s;
 }
-
-@media screen and (max-width: 1430px) {
-    :root{
-        --profile-font-size: .8rem;
-        --profile-p-size: .6rem;
-        --nav-font-size: .8rem;
-        --nav-social-size: 1.5rem;   
-        --h1-font-size: 2rem; 
-        --paragraph-font-size: 1.2rem;
-    }
-    .navigation i{
-        margin-right: .2rem;
-    }
-    
-}
-
+/* #endregion*/
 
 
 /* -- Hero section content -- */
 
 .side-content{
-    position: relative;
-    left: 15%;
-    width: 85%;
+    flex: 1;
     height: 100vh;
+    min-height: 600px;
     background-color: var(--side-content-color);
     display: flex;
     justify-content: center;
@@ -177,8 +177,8 @@ section{
 }
 .toggle-dark-button{
     position: absolute;
-    top: 5%;
-    left: 45%;
+    top: 40px;
+    right: 20px;
     background-color: #fff;
     border-radius: 50%;
     width: 2rem;
@@ -194,8 +194,11 @@ section{
     color: #fff;
 }
 
+
+
 .hero-image{
     height: 100vh;
+    min-height: 600px;
     width: 50%;
     position: relative;
 }
@@ -236,7 +239,7 @@ section{
     align-items: center;
     width: 50%;
     height: 100%;
-    padding: 2rem;
+    padding: 4rem;
     animation: text-animation .5s forwards;
 }
 .hero-text-container h1{
@@ -255,10 +258,11 @@ section{
 @keyframes text-animation{
     from{
         transform: translateY(20px);
+        opacity: 0;
+
     }
     to{
         opacity: 1;
-        transform: none;
     }
 }
 
@@ -298,21 +302,34 @@ section{
 @media screen and (max-width: 700px) {
     
     :root{
-        --profile-font-size: .7rem;
-        --profile-p-size: .5rem;
+        --profile-font-size: 1rem;
+        --profile-p-size: .8rem;
         --nav-font-size: 1rem;
         --nav-social-size: 2rem;
-        --nav-font-size: .8rem;
+        --nav-font-size: 1rem;
         --nav-social-size: 2.5rem;   
         --h1-font-size: 1.5rem; 
         --paragraph-font-size: 1rem;
     }
-    .sidebar{
+    .sidebar-container{
         display: none;
+    }
+
+    .hamburger-btn{
+        display: block;
+        position: fixed;
+        top: 40px;
+        left: 20px;    
+        cursor: pointer;
+        background: transparent;
+        border: none;
+        color: var(--sidebar-color);
+        font-size: 2rem;
+        z-index: 1;
+        transition: all .5s ease-in-out;          
     }
     
     .social-media{
-        flex-direction: column;
         font-size: .8rem;
         margin-bottom: 1rem;
     }
@@ -324,12 +341,16 @@ section{
     .navigation li{
         margin: 0;
     }
-    .navigation i{
-        display: none;
-    }
-    .side-content{
-        width: 100%;
-        left: 0;
-    }
     
+    .sidebar{
+        position: fixed;
+        top: 75px;
+        left: 20px;
+        min-height: 500px;
+        height: 50vh;
+        transition: all .3s ease-in-out;       
+    
+    }
+
+  
 }

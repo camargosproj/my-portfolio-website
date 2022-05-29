@@ -2,8 +2,10 @@ const darkToggle = document.getElementById("dark-mode-toggle");
 const toggleIcon = document.getElementById("toggle-icon");
 const slideBtn = document.getElementsByClassName("slide-btn");
 const imgSlide = document.getElementsByClassName("img-slide")[0];
-const sideBar = document.getElementsByClassName("sidebar")[0];
+const sideBar = document.getElementsByClassName("sidebar-container")[0];
 const sideContent = document.getElementsByClassName("side-content")[0];
+const toggleSideBarBtn = document.getElementById("toggle-sideBar"); 
+const hamburguerBtn = document.getElementsByClassName("hamburger-btn")[0];
 
 const toggleDarkMode = () => {
     darkToggle.classList.toggle("dark-mode");
@@ -32,15 +34,21 @@ const fetchSlide = async () => {
     imgSlide.src = response.url;
 }
 
+
 const toggleSideBar = () => {
-    if(sideBar.style.display === "none"){   
-        sideBar.style.display = "flex";
-        sideContent.style.width = "85%";
-        sideContent.style.left = "15%";
+    if(sideBar.classList.contains("sidebar-container")){
+        sideBar.classList.remove("sidebar-container");
+        sideBar.classList.add("sidebar-mobile");
+    }else{
+        sideBar.classList.remove("sidebar-mobile");
+        sideBar.classList.add("sidebar-container");
     }
-    else {
-        sideBar.style.display = "none";
-        sideContent.style.width = "100%";
-        sideContent.style.left = "0";
-    }   
 }
+
+window.addEventListener("resize",() => {
+    console.log(window.innerWidth);
+    if(window.innerWidth >= 700 && sideBar.classList.contains("sidebar-mobile")){
+        sideBar.classList.remove("sidebar-mobile");
+        sideBar.classList.add("sidebar-container");
+    }
+});
