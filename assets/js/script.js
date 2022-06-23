@@ -19,21 +19,6 @@ const toggleDarkMode = () => {
 
 }   
 
-const changeSlide = (num) => {
-    let btns = [...slideBtn];    
-    btns.forEach(btn => {
-        if(btn.classList.contains("slide-active")) {
-            btn.classList.remove("slide-active");
-        }
-    });
-    slideBtn[num].classList.add("slide-active");      
-    fetchSlide();
-}
-const fetchSlide = async () => {
-    response = await fetch("https://source.unsplash.com/random/?nature");
-    imgSlide.src = response.url;
-}
-
 
 const toggleSideBar = () => {
     if(sideBar.classList.contains("sidebar-container")){
