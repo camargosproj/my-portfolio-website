@@ -174,11 +174,12 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 2rem;
 }
 .toggle-dark-button{
     position: absolute;
-    top: 40px;
-    right: 20px;
+    top: 2.2rem;
+    right: 1.4rem;
     background-color: #fff;
     border-radius: 50%;
     width: 2rem;
@@ -194,44 +195,6 @@ section{
     color: #fff;
 }
 
-
-
-.hero-image{
-    height: 100vh;
-    min-height: 600px;
-    width: 50%;
-    position: relative;
-}
-
-.hero-image img{
-    height: 100%;
-    width: 100%;
-}
-
-.slide-container{  
-    display: flex;  
-    justify-content: space-around;
-    align-items: center;
-    width: 4rem;
-    height: 2rem;
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-}
-
-.slide-btn{
-    background-color: #fff;
-    width: 1rem;
-    height: 1rem;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.slide-active{
-    background: transparent;
-    border: #090a0a 2px solid;
-    pointer-events: none;
-}
 .hero-text-container{
     display: flex;
     flex-direction: column;
@@ -239,7 +202,6 @@ section{
     align-items: center;
     width: 50%;
     height: 100%;
-    padding: 4rem;
     animation: text-animation .5s forwards;
 }
 .hero-text-container h1{
