@@ -19,14 +19,22 @@ const toggleDarkMode = () => {
 
 }   
 
+const hideSideBar = () => {
+    sideBar.classList.remove("sidebar-container");
+    sideBar.classList.add("sidebar-mobile");
+}
+
+const showSideBar = () => {
+    sideBar.classList.remove("sidebar-mobile");
+    sideBar.classList.add("sidebar-container");
+}
+
 
 const toggleSideBar = () => {
     if(sideBar.classList.contains("sidebar-container")){
-        sideBar.classList.remove("sidebar-container");
-        sideBar.classList.add("sidebar-mobile");
+        hideSideBar();
     }else{
-        sideBar.classList.remove("sidebar-mobile");
-        sideBar.classList.add("sidebar-container");
+        showSideBar();
     }
 }
 
