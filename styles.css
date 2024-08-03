@@ -1,0 +1,243 @@
+:root {
+    --background-color: #1f1f1f;
+    --text-color: #e0e0e0;
+    --primary-color: #538512; /* Updated primary color */
+    --secondary-color: #03dac6;
+    --accent-color: #ff5722;
+    --border-color: #444444;
+    --header-background-color: #1f1f1f;
+    --header-text-color: #e0e0e0;
+    --link-hover-color: #ea2868;
+    --box-shadow: rgba(0, 0, 0, 0.3);
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+nav {
+    background-color: var(--primary-color);
+    color: var(--header-text-color);
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 2px 4px var(--box-shadow);
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-container a {
+    color: var(--header-text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.nav-container a:hover {
+    color: var(--link-hover-color);
+    transform: scale(1.05);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+.section {
+    background-color: var(--section-background-color);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px var(--box-shadow);
+}
+
+h2 {
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.technologies,
+.contact {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.tech-card {
+    background-color: var(--section-background-color);
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px var(--box-shadow);
+    width: 180px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tech-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px var(--box-shadow);
+}
+
+.tech-card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+
+.copy-email {
+    cursor: pointer;
+}
+
+.contact a,
+.contact .copy-email {
+    text-decoration: none;
+}
+
+.contact img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px var(--box-shadow);
+}
+
+.presentation {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.presentation p {
+    max-width: 800px;
+    margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+
+  
+    nav {
+        padding: 10px;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .profile-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-pic {
+        margin: 0 0 20px 0;
+    }
+
+    .tech-card {
+        width: 100px;
+    }
+
+    .contact {
+        gap: 15px; 
+    }
+
+    .presentation {
+        flex-direction: column;
+    }
+
+    .presentation p {
+        max-width: 100%;
+        margin: 20px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 5px;
+    }
+
+    .nav-links {
+        gap: 5px;
+    }
+
+    .nav-container a {
+        font-size: 14px;
+        margin: 5px 0;
+    }
+
+    .profile-pic {
+        width: 100px;
+        height: 100px;
+    }
+
+    .tech-card{
+        width: 80px;
+    }
+
+    .contact {
+        gap: 10px;
+    }
+
+    .tech-card img,
+    .contact img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}

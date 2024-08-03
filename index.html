@@ -1,53 +1,104 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <title>Marcos Camargo - Software Developer </title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marcos Camargo - Backend Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+        function copyEmail() {
+            const email = "marcoscamargo@outlook.com";
+            navigator.clipboard.writeText(email).then(() => {
+                alert("Email copied to clipboard!");
+            }).catch(err => {
+                console.error("Failed to copy email: ", err);
+            });
+        }
+    </script>
 </head>
+
 <body>
-    <section class="home-section" id="home">
-        <div class="hero-section">
-            <div class="sidebar-container">           
-                <div class="sidebar">
-                    <div class="profile-container">
-                        <img src="assets/images/profile.jpg" alt="Foto de perfil no topo da barra de navegação vertical">
-                        <h4>Marcos Camargo</h4>
-                        <p>Software Developer</p>                    
-                    </div>
-                    <nav class="navigation">
-                        <ul>
-                            <li><a href="#home"><i class="fa-solid fa-house-user"></i>Home</a></li>
-                            <li><a href="#portfolio"><i class="fa-solid fa-folder"></i>Portfolio</a></li>
-                            <li><a href="#contato"><i class="fa-solid fa-paper-plane"></i>Contato</a></li>
-                        </ul>
-                    </nav>
-                    <div class="social-media">
-                        <a href="https://www.instagram.com/camargopy/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://github.com/camargosproj" target="_blank"><i class="fa-brands fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/marcos-camargo-4b0671b2/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="side-content" id="dark-mode-toggle">
-                <button onclick="toggleSideBar()" class="hamburger-btn"><i id="toggle-sideBar" class="fa-solid fa-bars"></i></button>
-                <button class="toggle-dark-button" onclick="toggleDarkMode()"><i id="toggle-icon" class="fa-solid fa-moon"></i></button>
-                <div class="hero-text-container">
-                    <h1 class="hero-text-title">Olá, Visitante!</h1>
-                    <p class="hero-text">Me chamo Marcos Camargo, sou estudante de Analise e Desenvolvimento de sistema, apaixonado por tecnologia e do mundo de desenvolvivendo e gostaria de mostrar um pouco do meu trabalho. Vamos lá?</p>
-                    <div class="scroll-next-section">
-                        <a href="#portfolio"><i class="fa-solid fa-arrow-down"></i></a>
-                    </div>
-                </div>             
+    <nav>
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="#welcome">Welcome</a>
+                <a href="#technologies">Technologies</a>
+                <a href="#contact">Contact</a>
             </div>
         </div>
-    </section>
-    <section class="portfolio-section" id="portfolio"></section>
-    <section class="contato-section" id="contato"></section>
-    <script src="assets/js/script.js"></script>
+    </nav>
+
+    <div class="container">
+        <div id="welcome" class="section">
+            <h2>Welcome!</h2>
+            <div class="presentation">
+                <div class="profile-section">
+                    <img src="images/profile.jpeg" alt="Profile Picture" class="profile-pic" />
+                </div>
+                <p>
+                    Hi there! I’m <strong>Marcos Camargo</strong>, a backend developer based in Brazil. I’m passionate
+                    about building
+                    scalable and efficient web applications using modern technologies like Node.js, Nest.js, and
+                    Python. Whether you're looking to develop something from scratch or improve an existing system,
+                    I'm here to help make it happen. Let’s connect and create something amazing together!
+                </p>
+            </div>
+        </div>
+        <div id="technologies" class="section">
+            <h2>Technologies</h2>
+            <div class="technologies">
+                <div class="tech-card">
+                    <img src="images/nodejs.png" alt="Node.js" />
+                    <h3>Node.js</h3>
+                </div>
+                <div class="tech-card">
+                    <img src="images/typescript.png" alt="TypeScript" />
+                    <h3>TypeScript</h3>
+                </div>
+                <div class="tech-card">
+                    <img src="images/python.svg" alt="Python" />
+                    <h3>Python</h3>
+                </div>
+                <div class="tech-card">
+                    <img src="images/nest.svg" alt="NestJS" />
+                    <h3>NestJS</h3>
+                </div>
+                <div class="tech-card">
+                    <img src="images/postgresql.webp" alt="PostgreSQL" />
+                    <h3>PostgreSQL</h3>
+                </div>
+                <div class="tech-card">
+                    <img src="images/mongodb.svg" alt="MongoDB" />
+                    <h3>MongoDB</h3>
+                </div>
+                <div class="tech-card">
+                    <img src="images/nextjs.png" alt="Next.js" />
+                    <h3>Next.js</h3>
+                </div>
+                <div class="tech-card">
+                    <img src="images/docker.png" alt="Docker" />
+                    <h3>Docker</h3>
+                </div>
+            </div>
+        </div>
+        <div id="contact" class="section">
+            <h2>Contact</h2>
+            <div class="contact">
+                <div class="copy-email" onclick="copyEmail()">
+                    <img src="images/email.png" alt="Email Icon" />
+                </div>
+                <a href="https://www.linkedin.com/in/marcos-camargo-4b0671b2" target="_blank">
+                    <img src="images/linkedin.webp" alt="LinkedIn Icon" />
+
+                </a>
+                <a href="https://github.com/camargosproj" target="_blank">
+                    <img src="images/github.png" alt="GitHub Icon" />
+                </a>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
