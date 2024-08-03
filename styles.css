@@ -55,6 +55,30 @@ nav {
     transform: scale(1.05);
 }
 
+
+.language-switcher {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.language-switcher button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.language-switcher img {
+    width: 30px;
+    height: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.language-switcher img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 2px 4px var(--box-shadow);
+}
+
 .container {
     width: 90%;
     max-width: 1200px;

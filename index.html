@@ -1,105 +1,138 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="images/favicon.png" />
     <title>Marcos Camargo - Backend Developer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
     <script>
-        function copyEmail() {
-            const email = "marcoscamargo@outlook.com";
-            navigator.clipboard.writeText(email).then(() => {
-                alert("Email copied to clipboard!");
-            }).catch(err => {
-                console.error("Failed to copy email: ", err);
-            });
-        }
-    </script>
-</head>
+      function copyEmail() {
+        const email = "marcoscamargo@outlook.com";
+        navigator.clipboard
+          .writeText(email)
+          .then(() => {
+            alert("Email copied to clipboard!");
+          })
+          .catch((err) => {
+            console.error("Failed to copy email: ", err);
+          });
+      }
 
-<body>
+      function changeLanguage(lang) {
+        fetch(`languages/${lang}.json`)
+          .then((response) => response.json())
+          .then((data) => {
+            document.querySelectorAll("[data-i18n]").forEach((el) => {
+              const key = el.getAttribute("data-i18n");
+              if (data[key]) {
+                el.innerHTML = data[key];
+              }
+            });
+          })
+          .catch((err) => console.error("Error loading language file:", err));
+      }
+    </script>
+  </head>
+
+  <body>
     <nav>
-        <div class="nav-container">
-            <div class="nav-links">
-                <a href="#welcome">Welcome</a>
-                <a href="#technologies">Technologies</a>
-                <a href="#contact">Contact</a>
-            </div>
+      <div class="nav-container">
+        <div class="nav-links">
+          <a href="#welcome" data-i18n="nav_welcome">Welcome</a>
+          <a href="#technologies" data-i18n="nav_technologies">Technologies</a>
+          <a href="#contact" data-i18n="nav_contact">Contact</a>
         </div>
+        <div class="language-switcher">
+          <button onclick="changeLanguage('en')">
+            <img src="images/flag-en.png" alt="English" />
+          </button>
+          <button onclick="changeLanguage('pt')">
+            <img src="images/flag-pt.png" alt="Português" />
+          </button>
+        </div>
+      </div>
     </nav>
 
     <div class="container">
-        <div id="welcome" class="section">
-            <h2>Welcome!</h2>
-            <div class="presentation">
-                <div class="profile-section">
-                    <img src="images/profile.jpeg" alt="Profile Picture" class="profile-pic" />
-                </div>
-                <p>
-                    Hi there! I’m <strong>Marcos Camargo</strong>, a backend developer based in Brazil. I’m passionate
-                    about building
-                    scalable and efficient web applications using modern technologies like Node.js, Nest.js, and
-                    Python. Whether you're looking to develop something from scratch or improve an existing system,
-                    I'm here to help make it happen. Let’s connect and create something amazing together!
-                </p>
-            </div>
+      <div id="welcome" class="section">
+        <h2 data-i18n="welcome">Welcome!</h2>
+        <div class="presentation">
+          <div class="profile-section">
+            <img
+              src="images/profile.jpeg"
+              alt="Profile Picture"
+              class="profile-pic"
+            />
+          </div>
+          <p data-i18n="description">
+            Hi there! I’m <strong>Marcos Camargo</strong>, a backend developer
+            based in Brazil. I’m passionate about building scalable and
+            efficient web applications using modern technologies like Node.js,
+            Nest.js, and Python. Whether you're looking to develop something
+            from scratch or improve an existing system, I'm here to help make it
+            happen. Let’s connect and create something amazing together!
+          </p>
         </div>
-        <div id="technologies" class="section">
-            <h2>Technologies</h2>
-            <div class="technologies">
-                <div class="tech-card">
-                    <img src="images/nodejs.png" alt="Node.js" />
-                    <h3>Node.js</h3>
-                </div>
-                <div class="tech-card">
-                    <img src="images/typescript.png" alt="TypeScript" />
-                    <h3>TypeScript</h3>
-                </div>
-                <div class="tech-card">
-                    <img src="images/python.svg" alt="Python" />
-                    <h3>Python</h3>
-                </div>
-                <div class="tech-card">
-                    <img src="images/nest.svg" alt="NestJS" />
-                    <h3>NestJS</h3>
-                </div>
-                <div class="tech-card">
-                    <img src="images/postgresql.webp" alt="PostgreSQL" />
-                    <h3>PostgreSQL</h3>
-                </div>
-                <div class="tech-card">
-                    <img src="images/mongodb.svg" alt="MongoDB" />
-                    <h3>MongoDB</h3>
-                </div>
-                <div class="tech-card">
-                    <img src="images/nextjs.png" alt="Next.js" />
-                    <h3>Next.js</h3>
-                </div>
-                <div class="tech-card">
-                    <img src="images/docker.png" alt="Docker" />
-                    <h3>Docker</h3>
-                </div>
-            </div>
+      </div>
+      <div id="technologies" class="section">
+        <h2 data-i18n="technologies">Technologies</h2>
+        <div class="technologies">
+          <div class="tech-card">
+            <img src="images/nodejs.png" alt="Node.js" />
+            <h3>Node.js</h3>
+          </div>
+          <div class="tech-card">
+            <img src="images/typescript.png" alt="TypeScript" />
+            <h3>TypeScript</h3>
+          </div>
+          <div class="tech-card">
+            <img src="images/python.svg" alt="Python" />
+            <h3>Python</h3>
+          </div>
+          <div class="tech-card">
+            <img src="images/nest.svg" alt="NestJS" />
+            <h3>NestJS</h3>
+          </div>
+          <div class="tech-card">
+            <img src="images/postgresql.webp" alt="PostgreSQL" />
+            <h3>PostgreSQL</h3>
+          </div>
+          <div class="tech-card">
+            <img src="images/mongodb.svg" alt="MongoDB" />
+            <h3>MongoDB</h3>
+          </div>
+          <div class="tech-card">
+            <img src="images/nextjs.png" alt="Next.js" />
+            <h3>Next.js</h3>
+          </div>
+          <div class="tech-card">
+            <img src="images/docker.png" alt="Docker" />
+            <h3>Docker</h3>
+          </div>
         </div>
-        <div id="contact" class="section">
-            <h2>Contact</h2>
-            <div class="contact">
-                <div class="copy-email" onclick="copyEmail()">
-                    <img src="images/email.png" alt="Email Icon" />
-                </div>
-                <a href="https://www.linkedin.com/in/marcos-camargo-4b0671b2" target="_blank">
-                    <img src="images/linkedin.webp" alt="LinkedIn Icon" />
-
-                </a>
-                <a href="https://github.com/camargosproj" target="_blank">
-                    <img src="images/github.png" alt="GitHub Icon" />
-                </a>
-            </div>
+      </div>
+      <div id="contact" class="section">
+        <h2 data-i18n="contact">Contact</h2>
+        <div class="contact">
+          <div class="copy-email" onclick="copyEmail()">
+            <img src="images/email.png" alt="Email Icon" />
+          </div>
+          <a
+            href="https://www.linkedin.com/in/marcos-camargo-4b0671b2"
+            target="_blank"
+          >
+            <img src="images/linkedin.webp" alt="LinkedIn Icon" />
+          </a>
+          <a href="https://github.com/camargosproj" target="_blank">
+            <img src="images/github.png" alt="GitHub Icon" />
+          </a>
         </div>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>

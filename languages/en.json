@@ -1,0 +1,9 @@
+{
+    "nav_welcome": "Welcome",
+    "nav_technologies": "Technologies",
+    "nav_contact": "Contact",
+    "welcome": "Welcome!",
+    "description": "Hi there! I’m <strong>Marcos Camargo</strong>, a backend developer based in Brazil. I’m passionate about building scalable and efficient web applications using modern technologies like Node.js, Nest.js, and Python. Whether you're looking to develop something from scratch or improve an existing system, I'm here to help make it happen. Let’s connect and create something amazing together!",
+    "technologies": "Technologies",
+    "contact": "Contact"
+}
