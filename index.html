@@ -43,15 +43,15 @@
     <nav>
       <div class="nav-container">
         <div class="nav-links">
-          <a href="#welcome" data-i18n="nav_welcome">Welcome</a>
-          <a href="#technologies" data-i18n="nav_technologies">Technologies</a>
-          <a href="#contact" data-i18n="nav_contact">Contact</a>
+          <a href="#welcome" data-i18n="nav_welcome">Bem-vindo</a>
+          <a href="#technologies" data-i18n="nav_technologies">Tecnologias</a>
+          <a href="#contact" data-i18n="nav_contact">Contato</a>
         </div>
         <div class="language-switcher">
           <button onclick="changeLanguage('en')">
             <img src="images/flag-en.png" alt="English" />
           </button>
-          <button onclick="changeLanguage('pt')">
+          <button onclick="window.location.href='/'">
             <img src="images/flag-pt.png" alt="Português" />
           </button>
         </div>
@@ -60,7 +60,7 @@
 
     <div class="container">
       <div id="welcome" class="section">
-        <h2 data-i18n="welcome">Welcome!</h2>
+        <h2 data-i18n="welcome">Bem-vindo!</h2>
         <div class="presentation">
           <div class="profile-section">
             <img
@@ -70,17 +70,17 @@
             />
           </div>
           <p data-i18n="description">
-            Hi there! I’m <strong>Marcos Camargo</strong>, a backend developer
-            based in Brazil. I’m passionate about building scalable and
-            efficient web applications using modern technologies like Node.js,
-            Nest.js, and Python. Whether you're looking to develop something
-            from scratch or improve an existing system, I'm here to help make it
-            happen. Let’s connect and create something amazing together!
+            Olá! Sou <strong>Marcos Camargo</strong>, desenvolvedor backend,
+            apaixonado por criar aplicações web escaláveis e eficientes usando
+            tecnologias modernas como Node.js, Nest.js e Python. Se você está
+            procurando desenvolver algo do zero ou melhorar um sistema
+            existente, estou aqui para ajudar a tornar isso realidade. Vamos nos
+            conectar e criar algo incrível juntos!
           </p>
         </div>
       </div>
       <div id="technologies" class="section">
-        <h2 data-i18n="technologies">Technologies</h2>
+        <h2 data-i18n="technologies">Tecnologias</h2>
         <div class="technologies">
           <div class="tech-card">
             <img src="images/nodejs.png" alt="Node.js" />
@@ -117,7 +117,7 @@
         </div>
       </div>
       <div id="contact" class="section">
-        <h2 data-i18n="contact">Contact</h2>
+        <h2 data-i18n="contact">Contato</h2>
         <div class="contact">
           <div class="copy-email" onclick="copyEmail()">
             <img src="images/email.png" alt="Email Icon" />
